@@ -149,7 +149,7 @@ app.post("/users/forgot", async (request, response) => {
       }
     });
     let mailOptions = {
-      from: 'ranjithch137@gmail.com',
+      from: 'msvijayakumar121@gmail.com',
       to: email,
       subject: 'Reset Password link',
       html:
