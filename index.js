@@ -153,7 +153,7 @@ app.post("/users/forgot", async (request, response) => {
       to: email,
       subject: 'Reset Password link',
       html:
-      '<a href = "/retrieveAccount/' + email + '/' + token + '"> Reset Password Link</a>'
+      '<a href = "https://superlative-eclair-3cc3af.netlify.app/retrieveAccount/' + email + '/' + token + '"> Reset Password Link</a>'
     };
     transporter.sendMail(mailOptions, async function (err, data) {
       if (err) {
@@ -239,7 +239,7 @@ app.put("/activateAccount/:email/:token", async (request, response) => {
 app.post("/users/SignUp", async (request, response) => {
   const { email, password, firstName, lastName } = request.body;
   const token = jwt.sign({ email: email }, process.env.MY_SECRET_KEY);
-  const url = `/activateAccount/${email}/${token}`;
+  const url = `https://superlative-eclair-3cc3af.netlify.app//activateAccount/${email}/${token}`;
   const client = await createConnection();
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
@@ -258,7 +258,7 @@ app.post("/users/SignUp", async (request, response) => {
     }
   });
   let mailOptions = {
-    from: 'ranjithch137@gmail.com',
+    from: 'msvijayakumar121@gmail.com',
     to: email,
     subject: 'Account activation link',
     html:
